@@ -1,7 +1,6 @@
 .Logo {
   margin-right: 1vw;
 }
-
 .Navbar-ball {
   border-radius: 50%;
 }
@@ -10,49 +9,52 @@
   height: 52px;
   border: 2px dashed rgba(255, 249, 251, 1);
   animation: opacity-circle 2s ease-in-out 0.1s both,
-    rotate 4.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 4.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.1s infinite
+      alternate-reverse;
 }
 .ball2 {
   width: 46px;
   height: 46px;
   border: 1px solid rgba(255, 249, 251, 0.85);
   animation: opacity-circle 2s ease-in-out 0.2s both,
-    rotate 4s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 4s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.2s infinite alternate-reverse;
 }
 .ball3 {
   width: 40px;
   height: 40px;
   border: 1px dashed rgba(255, 249, 251, 0.6);
   animation: opacity-circle 2s ease-in-out 0.3s both,
-    rotate 3.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 3.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.3s infinite
+      alternate-reverse;
 }
 .ball4 {
   width: 34px;
   height: 34px;
   border: 1px solid rgba(255, 249, 251, 0.45);
   animation: opacity-circle 2s ease-in-out 0.4s both,
-    rotate 3s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 3s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.4s infinite alternate-reverse;
 }
 .ball5 {
   width: 28px;
   height: 28px;
   border: 1px dashed rgba(255, 249, 251, 0.3);
   animation: opacity-circle 2s ease-in-out 0.5s both,
-    rotate 2.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 2.5s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.5s infinite
+      alternate-reverse;
 }
 .ball6 {
   width: 22px;
   height: 22px;
   border: 1px solid rgba(255, 249, 251, 0.15);
   animation: opacity-circle 2s ease-in-out 0.6s both,
-    rotate 2s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 2s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.6s infinite alternate-reverse;
 }
 .ball7 {
   width: 16px;
   height: 16px;
   border: 1px dashed rgba(255, 249, 251, 0.1);
   animation: opacity-circle 2s ease-in-out 0.7s both,
-    rotate 1s cubic-bezier(0.7, 0.1, 0.3, 1.05) infinite alternate-reverse;
+    rotate 1s cubic-bezier(0.7, 0.1, 0.3, 1.05) 0.7s infinite alternate-reverse;
 }
 
 /* KEYFRAMES */
