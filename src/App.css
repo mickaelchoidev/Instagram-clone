@@ -3,9 +3,9 @@
 }
 
 .App {
-  background-color: #fff9fb;
-  font-family: "Montserrat", sans-serif;
+  background-color: #dde3e4;
   color: #08090a;
+  letter-spacing: 1.1px;
 }
 
 .App__header {

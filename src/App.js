@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { db } from "./config/Firebase";
 
 import Logo from "./components/Logo";
 import Post from "./components/Post";
@@ -6,26 +7,26 @@ import Post from "./components/Post";
 import "./App.css";
 
 function App() {
-  const [posts, setPosts] = useState([
-    {
-      username: "Mickael Choi",
-      imageUrl:
-        "https://images.unsplash.com/photo-1559419381-c0cfcdb1e5e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1115&q=80",
-      caption: "This is where I wanna go !",
-    },
-    {
-      username: "Stella Choi",
-      imageUrl:
-        "https://images.unsplash.com/photo-1551650045-fc958c7b0452?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1064&q=80",
-      caption: "My trip in Asia was incredible ! <3",
-    },
-    {
-      username: "Alice Travouillon",
-      imageUrl:
-        "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-      caption: "Que bella e la pizza !",
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
+
+  ///////////////////////******************///////////////////////
+
+  // useEffect => runs the code based on a speific conditions
+  useEffect(() => {
+    // here is where the code runs
+    db.collection("posts").onSnapshot((snapshot) => {
+      // every time a new post is added, this code will run
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          post: doc.data(),
+        }))
+      );
+    });
+  }, []);
+
+  ///////////////////////******************///////////////////////
+
   return (
     <div className="App">
       <header className="App__header">
@@ -34,8 +35,9 @@ function App() {
           <div className="Header__title">Instagram clone</div>
         </div>
       </header>
-      {posts.map((post) => (
+      {posts.map(({ id, post }) => (
         <Post
+          key={id}
           username={post.username}
           imageUrl={post.imageUrl}
           caption={post.caption}
