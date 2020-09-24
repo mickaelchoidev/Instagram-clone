@@ -1,0 +1,29 @@
+.Post {
+  margin-top: 2rem;
+  max-width: 700px;
+  /* border-radius: 4px; */
+  /* border: 1px solid #d1dadb; */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+.Post__header {
+  padding: 1rem 3vw;
+  display: flex;
+  align-items: center;
+}
+.Post__avatar {
+  width: 3rem;
+  margin-right: 3vw;
+}
+
+.Post__image {
+  width: 100%;
+  object-fit: contain;
+  /* border-top: 1px solid #fff9fb;
+  border-bottom: 1px solid #fff9fb; */
+}
+
+.Post__text {
+  padding: 1rem 3vw;
+  font-weight: normal;
+}
