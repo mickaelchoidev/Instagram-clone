@@ -15,6 +15,9 @@
   background-color: #8f5c38;
   border-top: 1px solid #fff9fb;
   box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Header__logo {
@@ -27,4 +30,15 @@
   font-size: 2rem;
   font-weight: 600;
   color: #fff9fb;
+}
+
+.App__logContainer {
+  margin: 0.7rem 3vw 0.7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App__logButton {
+  margin-left: 1vw;
 }
