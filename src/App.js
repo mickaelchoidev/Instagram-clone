@@ -7,7 +7,8 @@ import Post from "./components/Post";
 import Button from "@material-ui/core/Button";
 import AddRoundedIcon from "@material-ui/icons/AddRounded";
 import ImageUpload from "./components/ImageUpload";
-import SideBar from "./components/SideBar";
+// import SideBar from "./components/SideBar";
+import InstagramEmbed from "react-instagram-embed";
 
 import "./App.css";
 
@@ -99,41 +100,30 @@ function App() {
 
   return (
     <div className="App">
+      {/* top Navbar */}
       <header className="App__header">
         <div className="Header__logo">
           <Logo />
           <div className="Header__title">Instagram clone</div>
         </div>
-
         {user ? (
           <div className="App__logContainer">
-            <Button
-              variant="contained"
-              className="App__logButton"
-              onClick={onLogOut}
-            >
-              LOG OUT
-            </Button>
+            <button className="App__logButton" onClick={onLogOut}>
+              Sign Out
+            </button>
           </div>
         ) : (
           <div className="App__logContainer">
-            <div className="App__logButton">
-              <Button
-                variant="contained"
-                className="App__logButton"
-                onClick={onOpenSignIn}
-              >
-                SIGN IN
-              </Button>
-            </div>
-            <div className="App__logButton">
-              <Button variant="contained" onClick={onOpenSignUp}>
-                SIGN UP
-              </Button>
-            </div>
+            <button className="App__logButton" onClick={onOpenSignIn}>
+              Sign In
+            </button>
+            <button className="App__logButton" onClick={onOpenSignUp}>
+              Sign Up
+            </button>
           </div>
         )}
       </header>
+      {/* bottom Navbar */}
 
       {user?.displayName ? (
         <div className="App__addPost">
@@ -147,11 +137,10 @@ function App() {
           />
         </div>
       ) : (
-        <div className="App__addPost">
-          <h3 className="App__notLogMessage">
-            Sorry, you need to be logged in to upload an image :/
-          </h3>
-        </div>
+        <h3 className="App__notLogMessage">
+          Hey You ! Create your account or log into it to post an image and
+          comment others :)
+        </h3>
       )}
 
       <SignUp
@@ -174,16 +163,37 @@ function App() {
         onChangePassword={onchangePassword}
         onSignIn={onSignIn}
       />
-      <SideBar />
-      <div className="App__postsContainer">
-        {posts.map(({ id, post }) => (
-          <Post
-            key={id}
-            username={post.username}
-            imageUrl={post.imageUrl}
-            caption={post.caption}
+
+      <div className="App__container">
+        {/* <div className="App__sideBar">
+          <SideBar />
+        </div> */}
+        <div className="App__postsContainer">
+          {posts.map(({ id, post }) => (
+            <Post
+              key={id}
+              postId={id}
+              user={user}
+              username={post.username}
+              imageUrl={post.imageUrl}
+              caption={post.caption}
+            />
+          ))}
+        </div>
+        {/* <div className="App__instagramEmbed">
+          <InstagramEmbed
+            url="https://instagr.am/p/Zw9o4/"
+            maxWidth={320}
+            hideCaption={false}
+            containerTagName="div"
+            protocol=""
+            injectScript
+            onLoading={() => {}}
+            onSuccess={() => {}}
+            onAfterRender={() => {}}
+            onFailure={() => {}}
           />
-        ))}
+        </div> */}
       </div>
     </div>
   );

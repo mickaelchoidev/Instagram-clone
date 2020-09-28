@@ -17,15 +17,17 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: "#dde3e4",
     border: "2px solid #3f51b5",
+    borderRadius: "4px",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 3, 3),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    width: "60vw",
   },
   button: {
-    width: "100%",
+    width: "90%",
   },
 }));
 
@@ -99,8 +101,9 @@ function ImageUpload({ username, modalAddState, onCloseAddPost }) {
       <Fade in={modalAddState}>
         <div className={classes.paper}>
           {/* I want to have : */}
-          {/* - Caption input */}
+          {/* - progress bar */}
           {/* - file picker */}
+          {/* - caption input */}
           {/* - post button */}
           <progress
             value={progress}
@@ -114,7 +117,7 @@ function ImageUpload({ username, modalAddState, onCloseAddPost }) {
           />
           <textarea
             rows="5"
-            placeholder="Write your caption here..."
+            placeholder="Write a caption here..."
             className="ImageUpload__caption"
             onChange={(e) => setCaption(e.target.value)}
             value={caption}

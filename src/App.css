@@ -4,59 +4,86 @@
 
 .App {
   background-color: #dde3e4;
-  color: #08090a;
+  color: 0a090c;
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
+/* top Navbar */
 .App__header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #8f5c38;
+  background-color: #999dad;
   border-bottom: 1px solid #fff9fb;
   box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .Header__logo {
   display: flex;
   align-items: center;
 }
-
 .Header__title {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Dosis", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: #fff9fb;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
 }
-
 .App__logContainer {
-  margin: 0.7rem 3vw 0.7rem 0;
+  margin: 0 3vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .App__logButton {
+  background-color: #5c86c1;
+  color: #fff9fb;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
   margin-left: 1vw;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+.App__logButton:hover {
+  background-color: #3e68a3;
+  color: #fff9fb;
+}
+/* bottom Navbar */
 
+.App__container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 .App__postsContainer {
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+/* .App__instagramEmbed {
+  margin-left: 2vw;
+  border-radius: 4px;
+  border: 1px solid #bbc7c9;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+} */
 
 .App__addPost {
   position: fixed;
-  top: 7rem;
+  top: 6rem;
   right: 3vw;
 }
 
+/* button add */
 .App__addPostButton {
   padding: 5px;
   border: none;
@@ -64,21 +91,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #8f5c38;
+  background-color: #5c86c1;
   border-radius: 50%;
-  border: 2px solid #fff9fb;
   transition: all 0.2s ease-in-out;
 }
-
 .App__addPostButton:hover {
-  transform: scale(1.2);
+  background-color: #3e68a3;
+  transform: scale(1.1);
 }
 
+/* message not logged */
 .App__notLogMessage {
-  width: 200px;
-  font-size: 0.8rem;
-  background-color: #08090ae3;
+  text-align: center;
+  font-size: 1rem;
   color: #fff9fb;
+  background-color: #363a44;
   padding: 1rem;
-  border-radius: 4px;
 }
