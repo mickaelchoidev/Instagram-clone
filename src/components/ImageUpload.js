@@ -6,6 +6,8 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+
 import "./ImageUpload.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: "#dde3e4",
-    border: "2px solid #3f51b5",
+    backgroundColor: "#fff9fb",
+    // border: "2px solid #3f51b5",
     borderRadius: "4px",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 3, 3),
@@ -24,10 +26,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    color: "#08090a",
+    marginBottom: "1rem",
     width: "60vw",
   },
   button: {
-    width: "90%",
+    fontSize: "1rem",
+    padding: "0.5rem 0",
+    width: "100%",
   },
 }));
 
@@ -36,8 +44,8 @@ function ImageUpload({ username, modalAddState, onCloseAddPost }) {
 
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
+  // const [url, setUrl] = useState("");
 
   const onSelectImage = (e) => {
     if (e.target.files[0]) {
@@ -115,12 +123,12 @@ function ImageUpload({ username, modalAddState, onCloseAddPost }) {
             className="ImageUpload__file"
             onChange={onSelectImage}
           />
-          <textarea
-            rows="5"
-            placeholder="Write a caption here..."
-            className="ImageUpload__caption"
-            onChange={(e) => setCaption(e.target.value)}
+          <TextField
+            label="Write a caption here..."
+            variant="outlined"
+            className={classes.input}
             value={caption}
+            onChange={(e) => setCaption(e.target.value)}
           />
           <Button
             variant="contained"

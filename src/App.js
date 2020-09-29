@@ -4,15 +4,15 @@ import Logo from "./components/Logo";
 import SignUp from "./auth/SignUp";
 import SignIn from "./auth/SignIn";
 import Post from "./components/Post";
-import Button from "@material-ui/core/Button";
 import AddRoundedIcon from "@material-ui/icons/AddRounded";
 import ImageUpload from "./components/ImageUpload";
 // import SideBar from "./components/SideBar";
-import InstagramEmbed from "react-instagram-embed";
+// import InstagramEmbed from "react-instagram-embed";
 
 import "./App.css";
 
 function App() {
+  // state
   const [posts, setPosts] = useState([]);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -22,18 +22,17 @@ function App() {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
 
+  //////////////// functions modal auth ////////////////
   const onOpenSignUp = () => setOpenSignUp(true);
   const onOpenSignIn = () => setOpenSignIn(true);
   const onCloseModal = () => {
     setOpenSignUp(false);
     setOpenSignIn(false);
   };
-  const onOpenAddPost = () => setOpenAddPost(true);
-  const onCloseAddPost = () => setOpenAddPost(false);
   const onchangeUsername = (e) => setUsername(e.target.value);
   const onchangeEmail = (e) => setEmail(e.target.value);
   const onchangePassword = (e) => setPassword(e.target.value);
-
+  // to register
   const onSignUp = (e) => {
     e.preventDefault();
     auth
@@ -46,7 +45,7 @@ function App() {
       .catch((error) => alert(error.message));
     setOpenSignUp(false);
   };
-
+  // to connect
   const onSignIn = (e) => {
     e.preventDefault();
     auth
@@ -54,8 +53,12 @@ function App() {
       .catch((error) => alert(error.message));
     setOpenSignIn(false);
   };
-
+  // to disconnect
   const onLogOut = () => auth.signOut();
+
+  //////////////// functions modal add post ////////////////
+  const onOpenAddPost = () => setOpenAddPost(true);
+  const onCloseAddPost = () => setOpenAddPost(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -98,6 +101,9 @@ function App() {
       });
   }, []);
 
+  // const postDate = (date) =>
+  //   new Date(date.toDate()).toUTCString().split(" ").slice(0, 5).join(" ");
+
   return (
     <div className="App">
       {/* top Navbar */}
@@ -138,7 +144,7 @@ function App() {
         </div>
       ) : (
         <h3 className="App__notLogMessage">
-          Hey You ! Create your account or log into it to post an image and
+          Welcome ! Create your account or log into it to post an image and
           comment others :)
         </h3>
       )}
@@ -177,6 +183,7 @@ function App() {
               username={post.username}
               imageUrl={post.imageUrl}
               caption={post.caption}
+              // postDate={postDate(post.timestamp)}
             />
           ))}
         </div>

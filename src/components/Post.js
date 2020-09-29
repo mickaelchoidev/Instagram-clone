@@ -6,7 +6,8 @@ import Avatar from "@material-ui/core/Avatar";
 
 import "./Post.css";
 
-function Post({ username, user, imageUrl, caption, postId }) {
+function Post(props) {
+  const { username, user, imageUrl, caption, postId } = props;
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
 
@@ -35,44 +36,52 @@ function Post({ username, user, imageUrl, caption, postId }) {
     setComment("");
   };
 
+  // const commentsDate = (date) =>
+  //   new Date(date.toDate()).toUTCString().split(" ").slice(0, 5).join(" ");
+
   return (
     <div className="Post">
       <div className="Post__header">
         <Avatar
           className="Post__avatar"
-          src="https://images.unsplash.com/photo-1594616838951-c155f8d978a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-          alt="avatar"
+          src="/broken-image.jpg"
+          alt={username}
         />
         <h3>{username}</h3>
       </div>
       <img className="Post__image" src={imageUrl} alt="post" />
-      <h4 className="Post__text">
-        <strong className="Post__textUser">{username}</strong>
-        {caption}
-      </h4>
+      <div className="Post__description">
+        <h4 className="Post__text">
+          <strong className="Post__textUser">{username}</strong>
+          {caption}
+        </h4>
+        <p className="Post__date">{/* {postDate} */}</p>
+      </div>
       <div className="Post__comments">
-        {comments.map((comment) => (
-          <p>
-            <strong className="Post__textUser">{comment.username}</strong>
-            {comment.text}
-          </p>
-        ))}
+        {comments.map((comment) => {
+          return (
+            <div className="Post__comment">
+              <p>
+                <strong className="Post__textUser">{comment.username}</strong>
+                {comment.text}
+              </p>
+              <p className="Post__date">
+                {/* {commentsDate(comment.timestamp)} */}
+              </p>
+            </div>
+          );
+        })}
       </div>
       {user && (
-        <form className="Post__comment">
+        <form className="Post__addComment">
           <input
             type="text"
             placeholder="Write a comment..."
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button
-            type="submit"
-            className="Post__button"
-            disabled={!comment}
-            onClick={onPostComment}
-          >
-            POST
+          <button type="submit" disabled={!comment} onClick={onPostComment}>
+            Post
           </button>
         </form>
       )}

@@ -2,23 +2,24 @@
   max-width: 500px;
   margin-bottom: 2rem;
   border-radius: 4px;
-  /* border: 1px solid #bbc7c9; */
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  border: 1px solid #999dad;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.6);
   color: #08090a;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .Post__header {
-  padding: 0.6rem 1.4rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   background-color: #fff9fb;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 .Post__avatar {
-  width: 3rem;
   margin-right: 1rem;
-  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.6);
 }
 
 .Post__image {
@@ -28,25 +29,54 @@
   border-bottom: 1px solid #fff9fb; */
 }
 
+.Post__description {
+  background-color: #fff9fb;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .Post__text {
-  padding: 0.6rem 1.4rem;
   font-weight: normal;
   font-size: 0.8rem;
   color: #08090a;
 }
 
+.Post__comments {
+  background-color: #6b91c7;
+  /* border-bottom: 1px solid #bbc7c9; */
+  /* background-color: #fff9fb; */
+}
+.Post__comment {
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #fff9fb;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .Post__textUser {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-right: 1rem;
 }
+.Post__date {
+  float: right;
+  font-size: 0.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
 
-.Post__comment {
+.Post__addComment {
   background-color: #fff9fb;
   display: flex;
 }
-.Post__comment input {
+.Post__addComment input {
   flex: 1;
-  padding: 0.6rem 1.4rem;
+  padding: 1rem;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1px;
   border-top: 1px solid #bbc7c9;
   border-bottom: 1px solid #bbc7c9;
   border-left: none;
@@ -55,18 +85,19 @@
   font-size: 0.8rem;
   outline: none;
 }
-
-.Post__button {
+.Post__addComment button {
   flex: 0;
-  border: 1px solid #bbc7c9;
-  background-color: #bbc7c9;
-  cursor: pointer;
-  color: #08090a;
-}
-
-.Post__comments p {
-  padding: 0.6rem 1.4rem;
+  padding: 0.8rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 0.8rem;
-  border-bottom: 1px solid #bbc7c9;
-  background-color: #fff9fb;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #999dad;
+  cursor: pointer;
+  color: #fff9fb;
+  transition: all 0.2s ease-in-out;
+}
+.Post__addComment button:hover {
+  background-color: #777d92;
 }

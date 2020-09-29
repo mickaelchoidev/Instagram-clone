@@ -5,8 +5,7 @@
 .App {
   background-color: #dde3e4;
   color: 0a090c;
-  font-family: "Dosis", sans-serif;
-  font-weight: 400;
+  font-family: "Nunito", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -27,9 +26,9 @@
   align-items: center;
 }
 .Header__title {
-  font-family: "Dosis", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff9fb;
   letter-spacing: 1.5px;
 }
@@ -40,10 +39,10 @@
   align-items: center;
 }
 .App__logButton {
-  background-color: #5c86c1;
+  background-color: #6b91c7;
   color: #fff9fb;
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
   border: none;
   border-radius: 4px;
@@ -65,7 +64,6 @@
   align-items: flex-start;
 }
 .App__postsContainer {
-  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5c86c1;
+  background-color: #6b91c7;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
 }

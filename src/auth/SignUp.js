@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: "#dde3e4",
-    border: "2px solid #3f51b5",
+    backgroundColor: "#fff9fb",
+    // border: "2px solid #3f51b5",
     borderRadius: "4px",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(3, 3, 3),
@@ -30,12 +30,15 @@ const useStyles = makeStyles((theme) => ({
     width: "60vw",
   },
   button: {
+    fontSize: "1rem",
+    padding: "0.5rem 0",
     width: "100%",
   },
 }));
 
 function SignUp(props) {
   const classes = useStyles();
+
   const {
     modalState,
     onCloseModal,
@@ -63,6 +66,7 @@ function SignUp(props) {
         <Fade in={modalState}>
           <form className={classes.paper} onSubmit={onSignUp}>
             <TextField
+              required
               id="outlined-basic"
               className={classes.input}
               label="Username"
@@ -71,6 +75,7 @@ function SignUp(props) {
               onChange={onChangeUsername}
             />
             <TextField
+              required
               type="email"
               id="outlined-basic"
               className={classes.input}
