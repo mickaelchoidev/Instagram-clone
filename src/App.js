@@ -110,7 +110,7 @@ function App() {
       <header className="App__header">
         <div className="Header__logo">
           <Logo />
-          <div className="Header__title">Instagram clone</div>
+          <div className="Header__title">PicShare</div>
         </div>
         {user ? (
           <div className="App__logContainer">
