@@ -1,3 +1,22 @@
+/* KEYFRAMES */
+
+@keyframes opacity-circle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .Logo {
   margin: 0.5rem 2vw 0.5rem 3vw;
 }
@@ -53,24 +72,4 @@
   border: 1px dashed rgba(255, 249, 251, 1);
   animation: opacity-circle 2s ease-in-out 0.7s both,
     rotate 2s cubic-bezier(0.7, 0.1, 0.3, 1.2) 1.7s infinite alternate-reverse;
-}
-
-/* KEYFRAMES */
-
-@keyframes opacity-circle {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
