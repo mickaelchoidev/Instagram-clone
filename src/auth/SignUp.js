@@ -23,11 +23,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    width: "60vw",
   },
   input: {
     color: "#08090a",
     marginBottom: "1rem",
-    width: "60vw",
+    width: "100%",
   },
   button: {
     fontSize: "1rem",
