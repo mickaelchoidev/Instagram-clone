@@ -4,13 +4,13 @@ import "./Logo.css";
 const Logo = () => {
   return (
     <div className="Logo">
-      <div className="Logo__circle circle1">
-        <div className="Logo__circle circle2">
-          <div className="Logo__circle circle3">
-            <div className="Logo__circle circle4">
-              <div className="Logo__circle circle5">
-                <div className="Logo__circle circle6">
-                  <div className="Logo__circle circle7"></div>
+      <div className="Logo__circle circle__1">
+        <div className="Logo__circle circle__2">
+          <div className="Logo__circle circle__3">
+            <div className="Logo__circle circle__4">
+              <div className="Logo__circle circle__5">
+                <div className="Logo__circle circle__6">
+                  <div className="Logo__circle circle__7"></div>
                 </div>
               </div>
             </div>
